@@ -1,0 +1,23 @@
+body{
+    background-color: antiquewhite;
+}
+.fullscreen_bg{
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    overflow: hidden;
+    z-index: -1;
+    background-size: cover;
+}
+.fullscreen_bg_video{
+    position: fixed;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+}
+h2{
+    background-color: greenyellowz; 
+}
