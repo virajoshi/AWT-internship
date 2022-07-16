@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+			$(document).ready(function(){
+				
+				$("#BtnShow").attr("disabled",true);
+				
+				$("#BtnHide").click(function(){
+					$("#D1").hide(3000);
+					$(this).attr("disabled",true);
+					$("#BtnShow").attr("disabled",false);
+					$("#BtnToggle").text("Show");
+				});
+				
+				$("#BtnShow").click(function(){
+					$("#D1").show(3000);
+					$(this).attr("disabled",true);
+					$("#BtnHide").attr("disabled",false);
+					$("#BtnToggle").text("Hide");
+				});
+				
+				$("#BtnToggle").click(function(){
+					$("#D1").toggle(3000);
+					($(this).text()=="Hide")
+						?($(this).text("Show"),$("#BtnHide").attr("disabled",true),$("#BtnShow").attr("disabled",false))
+						:($(this).text("Hide"),$("#BtnHide").attr("disabled",false),$("#BtnShow").attr("disabled",true))
+				});
+				
+				$("#BtnPlus").click(function(){
+					var MDH=parseInt($("#D1").css("height"));
+					if(MDH<=500)
+					{
+						MDH+=10;
+						$("#D1").css("height",MDH);
+						$("#D1").css("width",MDH);
+					}
+					else{
+						alert("More than 500px is not possible.");
+					}
+				});
+				
+				$("#BtnMinus").click(function(){
+					var MDH=parseInt($("#D1").css("height"));
+					if(MDH>=20)
+					{
+						MDH-=10;
+						$("#D1").css("height",MDH);
+						$("#D1").css("width",MDH);
+					}
+					else{
+						alert("Less than 20px is not possible.");
+					}
+				});
+			});
+		</script>
+    </head>
+    <body>
+        <div id="D1" style="height: 300px;width: 350px;background-color: green;"></div><hr/>
+        <button id="BtnHide">hide</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="BtnShow">show</button><hr/>
+        <button id="BtnToggle">hide</button><hr/>
+        <button id="BtnPlus" style="font-size:x-large;"><b>+</b></button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="BtnMinus" style="font-size:x-large;"><b>-</b></button>
+    </body>
+</html>

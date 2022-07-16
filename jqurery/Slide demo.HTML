@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#flip").click(function(){
+                    $("#panel").slideDown("slow");
+                });
+                $("#f1").click(function(){
+                    $("#p1").slideUp("slow");
+                });
+                $("#f2").click(function(){
+                    $("#p2").slideToggle("slow");
+                });
+            });
+        </script>
+        <style>
+            #flip,#panel{background-color: gray;padding: 4px;text-align: center;border: solid 1.5px;}
+            #panel{padding: 45px;display: none;}
+
+        </style>
+        <style>
+            #f1,#p1{background-color: gray;padding: 4px;text-align: center;border: solid 1.5px;}
+            #p1{padding: 48px;}
+        </style>
+        <style>
+            #f2,#p2{background-color: gray;padding: 4px;text-align: center;border: solid 1.5px;}
+            #p2{padding: 48px; display: none;}
+        </style>
+    </head>
+    <body>
+        <div id="flip">click to side down</div>
+        <div id="panel">hello guys, how are you..??</div>
+        <hr/>
+        <div id="f1">click to side up</div>
+        <div id="p1">hello guys, how are you..??</div>
+        <hr/>
+        <div id="f2">click to side toggle</div>
+        <div id="p2">hello guys, how are you..??</div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#f1").click(function(){
+                    $("#d1").fadeIn();
+                    $("#d2").fadeIn("slow");
+                    $("#d3").fadeIn(3000);
+                });
+                $("#f2").click(function(){
+                    $("#d1").fadeOut();
+                    $("#d2").fadeOut("slow");
+                    $("#d3").fadeOut(3000);
+                });
+                $("#f3").click(function(){
+                    $("#d1").fadeToggle();
+                    $("#d2").fadeToggle("slow");
+                    $("#d3").fadeToggle(3000);
+                });
+                $("#f4").click(function(){
+                    $("#d1").fadeTo();
+                    $("#d2").fadeTo("slow");
+                    $("#d3").fadeTo(3000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="f1">click to fade in box</button>
+        <button id="f2">click to fade out box</button>
+        <button id="f3">click to fade toggle box</button>
+        <button id="f4">click to fade boxes</button>
+        <br><hr/>
+
+        <div id="d1" style="height: 90px;width: 90px;background-color: red;display: none;"></div>
+        <br>
+        <div id="d2" style="height: 90px;width: 90px;background-color: green;display: none;"></div>
+        <br>
+        <div id="d3" style="height: 90px;width: 90px;background-color: blue;display: none;"></div>
+    </body>
+</html>
